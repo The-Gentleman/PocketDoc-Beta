@@ -10,7 +10,15 @@ function getPatients(){
     fetch(patientEndPoint)
         .then(response => response.json())
         .then(patients => {
-            console.log(patients)
+            // patient name = patients.data[index].attributes.name
+            // patient diagnosis = patients.data[index].attributes.diagnosis
+             patients.data.forEach(patient => {
+                const patientInfo = `
+                <h2>Patient Name: ${patient.attributes.name}</h2>
+                <h3>Patient Diagnosis: ${patient.attributes.diagnosis}</h3>
+                <br><br>
+                `
+                document.querySelector('#patient-container').innerHTML += patientInfo;
+            })
         })
-
 }
