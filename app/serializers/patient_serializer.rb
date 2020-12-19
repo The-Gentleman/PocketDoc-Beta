@@ -1,4 +1,4 @@
 class PatientSerializer
   include FastJsonapi::ObjectSerializer
-  attributes 
+  attributes :name, :diagnosis
 end
