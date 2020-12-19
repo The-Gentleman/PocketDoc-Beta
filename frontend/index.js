@@ -10,8 +10,6 @@ function getPatients(){
     fetch(patientEndPoint)
         .then(response => response.json())
         .then(patients => {
-            // patient name = patients.data[index].attributes.name
-            // patient diagnosis = patients.data[index].attributes.diagnosis
              patients.data.forEach(patient => {
                 const patientInfo = `
                 <h2>Patient Name: ${patient.attributes.name}</h2>
