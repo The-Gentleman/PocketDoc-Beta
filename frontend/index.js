@@ -2,6 +2,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     getPatients();
+    assignExercise();
 })
 
 function getPatients(){
@@ -24,7 +25,12 @@ function getPatients(){
             })
         })
 }
-// use this to capture the buttons: document.querySelectorAll('#exercise-button')
+function assignExercise(){
+    let exerciseButtons = document.getElementsByClassName("btn btn-secondary");
+    for (const button of exerciseButtons) {
+        button.addEventListener('click', e => {console.log("HELLO")})
+      }
+}
 
 
 
