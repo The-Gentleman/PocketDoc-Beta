@@ -28,7 +28,9 @@ function getPatients(){
 function assignExercise(){
     let exerciseButtons = document.getElementsByClassName("btn btn-secondary");
     for (const button of exerciseButtons) {
-        button.addEventListener('click', e => {console.log("HELLO")})
+        button.addEventListener('click', e => {
+            // create form for exercises
+        })
       }
 }
 
