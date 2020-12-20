@@ -14,9 +14,12 @@ function getPatients(){
                 const patientInfo = `
                 <h2>Patient Name: ${patient.attributes.name}</h2>
                 <h3>Patient Diagnosis: ${patient.attributes.diagnosis}</h3>
-                <br><br>
+                <button type="submit" class="btn btn-secondary">Assign an Exercise</button>
                 `
-                document.querySelector('#patient-container').innerHTML += patientInfo;
+        document.querySelector('#patient-container').innerHTML += patientInfo;
+        document.querySelector('#patient-container').innerHTML += patientInfo;
+        // debugger
             })
         })
 }
+
