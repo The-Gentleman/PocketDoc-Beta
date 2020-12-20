@@ -15,7 +15,7 @@ function getPatients(){
                 <h2>Patient Name: ${patient.attributes.name}</h2>
                 <h3>Patient Diagnosis: ${patient.attributes.diagnosis}</h3>
                 <div id="exercise-button">
-                <button type="submit" class="btn btn-secondary">Assign an Exercise</button>
+                    <button type="submit" class="btn btn-secondary">Assign an Exercise</button>
                 <br><br>
                 </div>
                 `
