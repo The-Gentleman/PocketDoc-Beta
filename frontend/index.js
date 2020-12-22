@@ -28,25 +28,30 @@ function exerciseButton(){
         <button id="exercise-button"type="submit" class="btn btn-secondary">Assign an Exercise</button>
     </div>
     `
-    const button = document.querySelector("#exercise-button");
-    button.addEventListener("click", assignExercise);
+    const button = document.querySelector("#exercise-button").addEventListener("click", assignExercise);
 }
 
 function assignExercise(){
-//     const exerciseForm = `
-//     <div class="exercise-form-container">
-//     <form id="create-exercise-form">
-//       <h3>Assign an exercise</h3>
-//       <input id='input-title' type="text" name="title" value=""
-//       placeholder="Exercise name" class="input-text">
-//       <br><br>
-//       <input type="number" id="reps" name="reps" min="1" max="50"
-//       placeholder="reps" class="input-number">
-//       <br><br>
-//     </form>
-//   </div>
-//   `
-  debugger
+    const exerciseForm = `
+    <div class="exercise-form-container">
+    <form id="create-exercise-form">
+      <h3>Assign an exercise</h3>
+      <label>Patient Name:</label>
+      <input id='input-title' type="text" name="title" value=""
+      placeholder="Patient name" class="input-text">
+      <br><br>
+      <label>Exercise Name:</label>
+      <input id='input-title' type="text" name="title" value=""
+      placeholder="Exercise name" class="input-text">
+      <br><br>
+      <label>Number of Reps:</label>
+      <input type="number" id="reps" name="reps" min="1" max="50"
+      placeholder="reps" class="input-number">
+      <br><br>
+    </form>
+  </div>
+  `
+  document.querySelector('#exercise-form-container').innerHTML += exerciseForm;
 }
 
 
