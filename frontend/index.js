@@ -2,7 +2,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     getPatients();
-    assignExercise();
+    getExerciseButtons();
 })
 
 function getPatients(){
@@ -25,14 +25,28 @@ function getPatients(){
             })
         })
 }
-function assignExercise(){
-    let exerciseButtons = document.getElementsByClassName("btn btn-secondary");
+
+function getExerciseButtons(){
+    const exerciseButtons = document.getElementsByClassName("btn btn-secondary");
     for (const button of exerciseButtons) {
-        button.addEventListener('click', e => {
-            // create form for exercises
-        })
-      }
+        button.addEventListener('click', assignExercise);
+    }
 }
 
+
+function assignExercise(){
+    debugger; 
+//     <div class="exercise-form-container">
+//     <form id="create-exercise-form">
+//       <h3>Assign an exercise</h3>
+//       <input id='input-title' type="text" name="title" value=""
+//       placeholder="Exercise name" class="input-text">
+//       <br><br>
+//       <input type="number" id="reps" name="reps" min="1" max="50"
+//       placeholder="reps" class="input-number">
+//       <br><br>
+//     </form>
+//   </div>
+}
 
 
