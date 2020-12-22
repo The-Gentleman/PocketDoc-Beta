@@ -2,7 +2,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     getPatients();
-    getExerciseButtons();
+    exerciseButton();
 })
 
 function getPatients(){
@@ -15,10 +15,6 @@ function getPatients(){
                 const patientInfo = `
                 <h2>Patient Name: ${patient.attributes.name}</h2>
                 <h3>Patient Diagnosis: ${patient.attributes.diagnosis}</h3>
-                <div id="exercise-button">
-                    <button type="submit" class="btn btn-secondary">Assign an Exercise</button>
-                <br><br>
-                </div>
                 `
         document.querySelector('#patient-container').innerHTML += patientInfo;
 
@@ -26,16 +22,18 @@ function getPatients(){
         })
 }
 
-function getExerciseButtons(){
-    const exerciseButtons = document.getElementsByClassName("btn btn-secondary");
-    for (const button of exerciseButtons) {
-        button.addEventListener('click', assignExercise);
-    }
+function exerciseButton(){
+    const buttonContainer = `
+    <div id="exercise-button-container">
+        <button id="exercise-button"type="submit" class="btn btn-secondary">Assign an Exercise</button>
+    </div>
+    `
+    const button = document.querySelector("#exercise-button");
+    button.addEventListener("click", assignExercise);
 }
 
-
 function assignExercise(){
-    debugger; 
+//     const exerciseForm = `
 //     <div class="exercise-form-container">
 //     <form id="create-exercise-form">
 //       <h3>Assign an exercise</h3>
@@ -47,6 +45,8 @@ function assignExercise(){
 //       <br><br>
 //     </form>
 //   </div>
+//   `
+  debugger
 }
 
 
