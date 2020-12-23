@@ -33,12 +33,16 @@ function exerciseButton(){
 
 function assignExercise(){
     const exerciseForm = `
-    <div class="exercise-form-container">
+    <br>
     <form id="create-exercise-form">
-      <h3>Assign an exercise</h3>
       <label>Patient Name:</label>
-      <input id='input-title' type="text" name="title" value=""
-      placeholder="Patient name" class="input-text">
+    <select id="exercises" name="exercises">
+      <option value="1">Ted</option>
+      <option value="1">Marshall</option>
+      <option value="1">Lilly</option>
+      <option value="1">Barney</option>
+      <option value="1">Robin</option>
+    </select>
       <br><br>
       <label>Exercise Name:</label>
       <input id='input-title' type="text" name="title" value=""
@@ -48,8 +52,8 @@ function assignExercise(){
       <input type="number" id="reps" name="reps" min="1" max="50"
       placeholder="reps" class="input-number">
       <br><br>
+
     </form>
-  </div>
   `
   document.querySelector('#exercise-form-container').innerHTML += exerciseForm;
 }
