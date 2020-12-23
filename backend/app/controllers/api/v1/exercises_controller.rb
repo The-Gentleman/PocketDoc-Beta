@@ -6,9 +6,9 @@ class Api::V1::ExercisesController < ApplicationController
     end 
 
     def create
-        exercsise = Exercise.new(exercise_params)
-        if exercsise.save 
-            render json: exercsise, status: :accepted
+        exercise = Exercise.new(exercise_params)
+        if exercise.save 
+            render json: ExerciseSerializer.new(exercise), status: :accepted 
         else 
             render json: {errors: syllabus.errors.full_messages}, status: :unprocessible_entity 
             # unprocessible_entity is a 402 error saying that syntax is okay, 
