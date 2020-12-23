@@ -28,10 +28,13 @@ function exerciseButton(){
         <button id="exercise-button"type="submit" class="btn btn-secondary">Assign an Exercise</button>
     </div>
     `
-    const button = document.querySelector("#exercise-button").addEventListener("click", assignExercise);
+    const button = document.querySelector("#exercise-button").addEventListener("click", createExerciseForm);
+    const exerciseForm =  document.querySelector('#exercise-form-container');
+    exerciseForm.addEventListener("submit", (e) => exerciseFormHandler(e))
+
 }
 
-function assignExercise(){
+function createExerciseForm(){
     const exerciseForm = `
     <br>
     <form id="create-exercise-form">
@@ -52,10 +55,17 @@ function assignExercise(){
       <input type="number" id="reps" name="reps" min="1" max="50"
       placeholder="reps" class="input-number">
       <br><br>
+      <input id="submit" type="submit" name="submit" value="Create Exercise" class="submit">
+      <br><br>
 
     </form>
   `
   document.querySelector('#exercise-form-container').innerHTML += exerciseForm;
+}
+
+function exerciseFormHandler(e){
+    e.preventDefault();
+    console.log(e);
 }
 
 
