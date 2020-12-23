@@ -14,7 +14,12 @@ class Api::V1::ExercisesController < ApplicationController
             # unprocessible_entity is a 402 error saying that syntax is okay, 
             # but you probably failed some validations
         end 
-
     end 
+
+
+    private
+    def exercise_params
+        params.require(:exercise).permit(:name, :reps, :patient_id)
+    end
 
 end

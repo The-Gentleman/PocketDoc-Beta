@@ -41,10 +41,10 @@ function createExerciseForm(){
       <label>Patient Name:</label>
     <select id="exercises" name="exercises">
       <option value="1">Ted</option>
-      <option value="1">Marshall</option>
-      <option value="1">Lilly</option>
-      <option value="1">Barney</option>
-      <option value="1">Robin</option>
+      <option value="2">Marshall</option>
+      <option value="3">Lilly</option>
+      <option value="4">Barney</option>
+      <option value="5">Robin</option>
     </select>
       <br><br>
       <label>Exercise Name:</label>
@@ -65,7 +65,27 @@ function createExerciseForm(){
 
 function exerciseFormHandler(e){
     e.preventDefault();
-    console.log(e);
+    const patientValueString = document.querySelector("#exercises").value
+    const patientValue = parseInt(patientValueString);
+    const exerciseName =  document.querySelector("#input-title").value;
+    const numberOfRepsString = document.querySelector("#reps").value;
+    const numberOfReps = parseInt(numberOfRepsString);
+    exerciseFetch(exerciseName, numberOfReps, patientValue);
+}
+
+function exerciseFetch(name, reps, patient_id){
+    const exerciseEndpoint = 'http://localhost:3000/api/v1/exercises';
+    fetch(exerciseEndpoint, {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({
+            name: name,
+            reps: reps, 
+            patient_id: patient_id
+        })
+    })
+    .then(response => response.json())
+    .then(exercises => console.log(exercises))
 }
 
 
